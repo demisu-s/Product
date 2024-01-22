@@ -1,8 +1,10 @@
 
+const connectDB=require("./config/db")
+require('dotenv').config();
 
 const express = require('express');
 const productRoutes = require('./routes/productRoutes'); 
-
+connectDB()
 const app = express();
 const port = 3000;
 
