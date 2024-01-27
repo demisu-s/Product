@@ -1,13 +1,11 @@
-
 const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
 
-router.get('/products', productController.getAllProducts); // Change the route path
+router.get('/products', productController.getAllProducts);
+router.post('/products', productController.createProduct); // Corrected function name
 
-router.post('/products', productController.createProducts);
-
-router.put('/products/:id', productController.updateProductsById);
-router.delete('/products/:id', productController.deleteProductById); // Change the route path
+router.put('/products/:id', productController.updateProductById); // Corrected function name
+router.delete('/products/:id', productController.deleteProductById);
 
 module.exports = router;
