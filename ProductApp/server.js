@@ -1,20 +1,24 @@
-
-const connectDB=require("./config/db")
+const connectDB = require("./config/db");
 require('dotenv').config();
-
 const express = require('express');
-const productRoutes = require('./routes/productRoutes'); 
-connectDB()
+const productRoutes = require('./routes/productRoutes');
+const userRoutes = require('./routes/UserRoute');
+connectDB();
+
 const app = express();
 const port = 3000;
 
-// Middleware to parse JSON
 app.use(express.json());
 
 // Routes
-app.use('/api', productRoutes);
+app.use('/api/products', productRoutes);
+app.use('/api/users', userRoutes);
 
 // Start server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(port, (err) => {
+  if (err) {
+    console.error(`Error starting server: ${err}`);
+  } else {
+    console.log(`Server is running on http://localhost:${port}`);
+  }
 });

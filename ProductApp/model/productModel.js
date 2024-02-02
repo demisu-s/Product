@@ -1,3 +1,4 @@
+const { number } = require('joi')
 const mongoose=require('mongoose')
 const productSchema=mongoose.Schema({
     title:{
@@ -9,7 +10,12 @@ const productSchema=mongoose.Schema({
         required:[true,"add description"]
 
     },
+    quantity:{
+type:Number,
+// required:[true,"add quantity"]
+    },
 },
+
 {
     timestamps:true,
 })
