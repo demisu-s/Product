@@ -6,7 +6,7 @@ const User = require("../model/userModel");
 
 
 const register = async (req, res) => {
-  const { userName, email, password } = req.body;
+  const { userName, email, password,role } = req.body;
 
 
   const salt = await bcrypt.genSalt(10);
@@ -16,6 +16,7 @@ const register = async (req, res) => {
     userName,
     email,
     password: hashedPassword,
+    role
   });
 
   res.status(201).json(user);
@@ -44,7 +45,7 @@ const login =async (req, res) => {
 
 
 const getProfile = (req, res) => {
-  res.json({ message: "Get user profile" });
+  res.json(req.user);
 };
 
 
