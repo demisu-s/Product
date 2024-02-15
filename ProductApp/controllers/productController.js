@@ -1,7 +1,7 @@
 const Joi = require("joi");
 const asyncHandler = require("express-async-handler");
 const Product = require("../model/productModel");
-const User =require("../model/userModel")
+const User =require("../model/UserModel")
 
 
 //get all product controller for admin only
