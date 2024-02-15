@@ -1,8 +1,9 @@
 const Joi = require("joi");
 const asyncHandler = require("express-async-handler");
 const Product = require("../model/productModel");
-const User =require("../model/userModel")
-
+// const User =require("../model/userModel");
+const userModel = require("../model/userModel");
+// const userModel = require('../model/userModel');
 
 //get all product controller for admin only
 exports.getAllProducts=asyncHandler(async(req,res)=>
@@ -60,7 +61,7 @@ exports.deleteProductById = asyncHandler(async (req, res) => {
     return res.status(404).json({ error: "Product not found" });
   }
 
-  const user=await User.findById(req.user.id)
+  const user=await userModel.findById(req.user.id)
 if(!user){
   res.status(401).json({error:"User Not found"})
 }
