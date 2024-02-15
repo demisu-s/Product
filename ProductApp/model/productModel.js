@@ -1,5 +1,11 @@
 const mongoose=require('mongoose')
 const productSchema=mongoose.Schema({
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:"User",
+    },
+
     title:{
         type:String,
     required:[true,"add title"],
@@ -9,7 +15,12 @@ const productSchema=mongoose.Schema({
         required:[true,"add description"]
 
     },
+    quantity:{
+type:Number,
+// required:[true,"add quantity"]
+    },
 },
+
 {
     timestamps:true,
 })
