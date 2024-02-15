@@ -12,8 +12,8 @@ exports.getAllProducts=asyncHandler(async(req,res)=>
 
 // Get all products
 exports.getAllProduct = asyncHandler(async (req, res) => {
-  const products = await Product.find({user:req.user.id});
-  res.status(200).json(products);
+  const product = await Product.find({user:req.user.id});
+  res.status(200).json(product);
 });
 
 
