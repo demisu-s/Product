@@ -1,5 +1,6 @@
 const connectDB = require("./config/db");
 require('dotenv').config();
+const cors = require('cors');
 const express = require('express');
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/UserRoute');
@@ -9,6 +10,10 @@ const app = express();
 const port =process.env.PORT||4000;
 
 app.use(express.json());
+
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
 
 // Routes
 app.use('/api/products', productRoutes);

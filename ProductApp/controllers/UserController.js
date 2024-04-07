@@ -1,6 +1,6 @@
 const Joi = require("joi");
 const asyncHandler = require("express-async-handler");
-const bcrypt = require("bcryptjs"); // Change this line
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../model/UserModel");
 

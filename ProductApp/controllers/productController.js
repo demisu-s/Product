@@ -46,7 +46,7 @@ if(!user){
   res.status(401).json({error:"User Not found"})
 }
 if(product.user.toString()!==user.id){
-  res.status(401).json({error:"user Not authirized"})
+  res.status(401).json({error:"user Not authorized"})
 }
 
  const updatedProduct = await Product.findByIdAndUpdate(req.params.id,req.body,{ new: true });

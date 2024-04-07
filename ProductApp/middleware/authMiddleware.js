@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const asyncHandler = require("express-async-handler");
 const User = require("../model/UserModel");
-const bcrypt = require("bcryptjs"); // Change this line to use bcryptjs instead of bcrypt
+const bcrypt = require("bcryptjs"); 
 
 const protect = asyncHandler(async (req, res, next) => {
   let token;
